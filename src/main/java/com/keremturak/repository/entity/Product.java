@@ -19,6 +19,6 @@ public class Product {
     Long restaurantid;
     String name;
     String category;
-    Double cost;
+    Long cost;
 
 }

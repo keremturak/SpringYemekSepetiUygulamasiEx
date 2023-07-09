@@ -24,6 +24,6 @@ public class Customer {
     String password;
     String cardDetails;
     String verificationCode;
-    Long Balance;
-    int status =0;
+    Long balance;
+    int status ;
 }

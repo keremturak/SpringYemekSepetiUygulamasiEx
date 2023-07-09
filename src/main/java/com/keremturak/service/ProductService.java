@@ -28,7 +28,6 @@ public class ProductService extends ServiceManager<Product, Long> {
         if (restaurantService.findById(dto.getRestaurantid()).isPresent()){
             return save(product);
         }throw new YemekSepetiException(ErrorType.BOYLE_BIR_RESTAURANT_YOK);
-
     }
     public List<Product> findAllProductByRestorant(Long id) {
         return productRepository.findAllByRestaurantid(id);

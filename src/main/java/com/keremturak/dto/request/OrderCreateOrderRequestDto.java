@@ -13,8 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @SuperBuilder
 public class OrderCreateOrderRequestDto {
-    @NotNull
-    Long restaurantid;
+
     @NotNull
     Long customerid;
     @NotNull

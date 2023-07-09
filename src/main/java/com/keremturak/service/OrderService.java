@@ -4,6 +4,7 @@ import com.keremturak.dto.request.OrderCreateOrderRequestDto;
 import com.keremturak.mapper.IOrderMapper;
 import com.keremturak.repository.IOrderRepository;
 import com.keremturak.repository.entity.Order;
+import com.keremturak.repository.entity.Product;
 import com.keremturak.utility.ServiceManager;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,9 @@ public class OrderService extends ServiceManager<Order,Long> {
         super(orderRepository);
         this.orderRepository = orderRepository;
     }
-    public Order createOrder(OrderCreateOrderRequestDto dto){
+    public Order createOrder(OrderCreateOrderRequestDto dto, Product product){
         Order order = IOrderMapper.INSTANCE.orderCreateOrderDto(dto);
+        order.setRestaurantid(product.getRestaurantid());
         return (orderRepository.save(order));
     }
 

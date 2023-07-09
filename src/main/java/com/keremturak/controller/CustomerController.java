@@ -2,10 +2,10 @@ package com.keremturak.controller;
 
 import com.keremturak.dto.request.CustomerRegisterRequestDto;
 import com.keremturak.dto.request.OrderCreateOrderRequestDto;
+import com.keremturak.dto.response.CustomerRegisterResponseDto;
 import com.keremturak.repository.entity.Customer;
 import com.keremturak.repository.entity.Order;
 import com.keremturak.service.CustomerService;
-import com.keremturak.service.MailService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -23,25 +23,33 @@ public class CustomerController {
 
 
     @PostMapping(SAVE)
-    public ResponseEntity<Customer> register(@RequestBody @Valid CustomerRegisterRequestDto dto){
-        return ResponseEntity.ok(customerService.register(dto));
+    public ResponseEntity<CustomerRegisterResponseDto> register(@RequestBody @Valid CustomerRegisterRequestDto dto){
+        CustomerRegisterResponseDto  responseDto = customerService.register(dto);
+        return ResponseEntity.ok(responseDto);
     }
     @PostMapping(AUTHENTICATION)
-    public Customer authentication(String email, String authCode){
+    public CustomerRegisterResponseDto authentication(String email, String authCode){
         return customerService.authentication(email,authCode);
     }
     @GetMapping(FINDALL)
-    public ResponseEntity<List<Customer>> findAll(){
-        return ResponseEntity.ok(customerService.findAll());
+    public ResponseEntity<List<CustomerRegisterResponseDto>> findAll(){
+        return ResponseEntity.ok(customerService.findAllDto());
     }
 
     @GetMapping(FINDALLORDERS)
     public ResponseEntity<List<Order>> findAllOrders(Long id){
         return ResponseEntity.ok(customerService.findAllOrders(id));
     }
-    @PostMapping(ORDER)
+    @GetMapping(ORDER)
     public ResponseEntity<Order> order(@Valid OrderCreateOrderRequestDto dto){
         return ResponseEntity.ok(customerService.order(dto));
+    }
+    @PostMapping(ADDBALANCE)
+    public ResponseEntity<CustomerRegisterResponseDto> addBalance(Long id, Long amount){
+        return ResponseEntity.ok(customerService.addBalance(id,amount));
+    }   @PostMapping(ADDCARDDETAILS)
+    public ResponseEntity<CustomerRegisterResponseDto> addCardDetails(Long id, String cardNumber, Long amount){
+        return ResponseEntity.ok(customerService.addCardDetails(id,cardNumber,amount));
     }
 
 }

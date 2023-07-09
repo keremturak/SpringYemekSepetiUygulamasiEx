@@ -18,5 +18,5 @@ public class ProductSaveRequestDto {
     String name;
     String category;
     @NotNull
-    Double cost;
+    Long cost;
 }

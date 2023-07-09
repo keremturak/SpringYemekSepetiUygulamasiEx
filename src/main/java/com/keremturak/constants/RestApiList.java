@@ -23,6 +23,8 @@ public class RestApiList {
     public static final String AUTHENTICATION = "/authentication";
     public static final String FINDALLORDERS = "/findallorders";
     public static final String FINDALLPRODUCT = "/findallproduct";
+    public static final String ADDBALANCE = "/addbalance";
+    public static final String ADDCARDDETAILS = "/addcarddetails";
     public static final String CREATEORDER = "/createorder";
     public static final String SAVEDTO = "/savedto";
     public static final String SAVEDTOMAPPER = "/savedtomapper";

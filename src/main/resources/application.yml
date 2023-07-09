@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yemeksepeti
+    username: root
+    password: 23061995
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: keremturakstep@gmail.com
+    password: rodrgdvwlcqmapkw
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false

@@ -87,8 +87,8 @@ This project has been prepared with the aim of using some technologies and metho
 
 ## What Did I Try To Do
 I tried to use Spring Boot build in a simple way. I created End Points using @RestController. I've done a lot of checking in dtos using @Valid. I used Http Request Methods such as @PostMapping, @GetMapping. I made the relationships between my entities via id. I made a class that generates auth code for registration and sent this code to the user by mail. (This was the first for me). I tried to use layered architecture. I presented my entities from database as dto and I converted the dtos to customer via mapper. I learned how to configure mysql. I created my own exception class to catch errors. I checked many conditions. I tried for clean code. I strived to fulfill the solid principles. If there is something missing or need improvement, please give feedback.
-## Work Flow
 
+## Work Flow
 ![Spring Boot Flow](https://www.linkpicture.com/q/1_161.png)
 
 ![Spring Boot](https://www.linkpicture.com/q/2_1398.png)
